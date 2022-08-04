@@ -3,6 +3,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Set;
+
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -42,5 +44,8 @@ public class Parser {
             throw new Exception("There isn't that currency.");
         }else
             return currencyRateMap.get(currency);
+    }
+    public Set<String> getCurrencies(){
+        return currencyRateMap.keySet();
     }
 }

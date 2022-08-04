@@ -1,5 +1,6 @@
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.List;
 
 public class Calculator {
     private Parser parser =  new Parser();
@@ -16,5 +17,14 @@ public class Calculator {
         } catch (Exception e) {
             throw e;
         }
+    }
+
+    public String getCurrenciesToString(){
+        String message = "";
+        for (String str: parser.getCurrencies()) {
+            message+=str;
+            message+=" ";
+        }
+        return message;
     }
 }
